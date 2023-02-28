@@ -1,0 +1,7 @@
+C:\Users\peter\source\repos\banks\banks\bin\Debug\banks.exe.config
+C:\Users\peter\source\repos\banks\banks\bin\Debug\banks.exe
+C:\Users\peter\source\repos\banks\banks\bin\Debug\banks.pdb
+C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.csproj.AssemblyReference.cache
+C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.csproj.CoreCompileInputs.cache
+C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.exe
+C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.pdb
