@@ -22,14 +22,15 @@ namespace banks
             foreach (Customer customer in Customers)
             {
                 Console.WriteLine(customer.Name);
+
             }
         }
 
-        //public void CreateCustomer(string name, string email, string password)
-        //{
-        //    Customers.Add(new Customer(name, email, password));
-            
-        //}
+        public void CreateCustomer(string name, string email, string password)
+        {
+            Customers.Add(new Customer(name, email, password));
+
+        }
 
         public void CreateAccount(Customer customer, decimal balance)
         {

@@ -22,10 +22,12 @@ namespace banks
 
             public void ShowOverview()
             {
-                foreach (Account account in Accounts)
-                {
-                    account.ShowOverview();
-                }
+            foreach (Account account in Accounts)
+            {
+                Console.WriteLine($"\n{account.AccountNumber} Name: {account.Customer.Name}\nAccount Balance: {account.Balance}\n");
+
+            }
+
             }
 
             public void TransferMoney(Account fromAccount, Account toAccount, decimal amount)
@@ -33,7 +35,9 @@ namespace banks
                 fromAccount.Withdraw(amount);
                 toAccount.Deposit(amount);
             }
+
         
+
     }
 
 
