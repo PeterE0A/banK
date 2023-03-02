@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace banks
 {
-    class Account
+    class Account : Person
     {
 
 
@@ -24,10 +24,43 @@ namespace banks
             customer.Accounts.Add(this);
         }
 
+
+        public void deposit_money()
+        {
+            Console.WriteLine("Enter the account number to Deposit to:");
+            int toAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the amount to Deposit:");
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+
+            Account toAccount = Data.accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+            toAccount.Deposit(amount);
+            Console.WriteLine("Deposit complete!");
+            Console.ReadLine();
+        }
+
         public void Deposit(decimal amount)
         {
             Balance += amount;
             Console.WriteLine($"Deposited {amount:C} to account #{AccountNumber}. New balance: {Balance:C}");
+        }
+
+
+        public void withdraw_money()
+        {
+
+            Console.WriteLine("Enter the account number to withdraw from:");
+            int fromAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the amount to withdraw:");
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+
+            Account toAccount = Data.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+
+            toAccount.Withdraw(amount);
+            Console.WriteLine("Withdrawal complete!");
+            Console.ReadLine();
         }
 
         public void Withdraw(decimal amount)

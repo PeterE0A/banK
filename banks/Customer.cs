@@ -22,6 +22,9 @@ namespace banks
 
             public void ShowOverview()
             {
+
+            Console.WriteLine("Here are your accounts:");
+
             foreach (Account account in Accounts)
             {
                 Console.WriteLine($"\n{account.AccountNumber} Name: {account.Customer.Name}\nAccount Balance: {account.Balance}\n");
@@ -30,11 +33,35 @@ namespace banks
 
             }
 
-            public void TransferMoney(Account fromAccount, Account toAccount, decimal amount)
+        public void TransferMoney()
+        {
+            Console.WriteLine("Enter the account number to transfer from:");
+            int fromAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the account number to transfer to:");
+            int toAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the amount to transfer:");
+            //decimal amount = decimal.Parse(Console.ReadLine());
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+            Account fromAccount = Data.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+            Account toAccount = Data.accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+            if (fromAccount != null && toAccount != null)
             {
                 fromAccount.Withdraw(amount);
                 toAccount.Deposit(amount);
+                Console.WriteLine("Transfer complete!");
+                Console.ReadLine();
             }
+            else
+            {
+                Console.WriteLine("Invalid account numbers.");
+                Console.ReadLine();
+            }
+        }
+
+        
+            
 
         
 

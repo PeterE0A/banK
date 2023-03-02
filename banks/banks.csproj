@@ -44,9 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Actions.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Customer_Menu.cs" />
+    <Compile Include="Employee_Menu.cs" />
+    <Compile Include="Main_menu.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
