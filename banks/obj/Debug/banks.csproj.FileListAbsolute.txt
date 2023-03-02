@@ -5,4 +5,3 @@ C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.csproj.AssemblyReference
 C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.csproj.CoreCompileInputs.cache
 C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.exe
 C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.pdb
-C:\Users\peter\source\repos\banks\banks\obj\Debug\banks.csproj.SuggestedBindingRedirects.cache

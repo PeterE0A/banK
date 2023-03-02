@@ -118,20 +118,50 @@ namespace banks
 
                             else if (choice == 3)
                             {
-                                Account toAccount = accounts.Find(a => a.AccountNumber == a.Balance);
-                                Console.WriteLine("Enter amount to deposit:");
-                                 //decimal amount = decimal.Parse(Console.ReadLine());
+                                //to be continued
 
-                                decimal amount1 = decimal.Parse(Console.ReadLine());
-                                 toAccount.Deposit(amount1);
+                                //Account toAccount = accounts.Find(a => a.AccountNumber == a.Balance);
+                                //Console.WriteLine("Enter amount to deposit:");
+                                // //decimal amount = decimal.Parse(Console.ReadLine());
 
-                               
-                                
+                                //decimal amount1 = decimal.Parse(Console.ReadLine());
+                                // toAccount.Deposit(amount1);
+                                Console.WriteLine("Enter the account number to Deposit to:");
+                                int toAccountNumber = int.Parse(Console.ReadLine());
+                                Console.WriteLine("Enter the amount to Deposit:");
+                                decimal amount = decimal.Parse(Console.ReadLine());
+
+
+                                Account toAccount = accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+                                toAccount.Deposit(amount);
+                                Console.WriteLine("Deposit complete!");
+                                Console.ReadLine();
 
                             }
 
                             else if (choice == 4)
                             {
+                                //Console.WriteLine("Enter amount to withdraw:");
+                                //if (!decimal.TryParse(Console.ReadLine(), out amount))
+                                //{
+                                //    Console.WriteLine("Invalid amount.");
+                                //    break;
+                                //}
+                                //customer.Account.Withdraw(amount);
+                                //break;
+
+                                Console.WriteLine("Enter the account number to withdraw from:");
+                                int fromAccountNumber = int.Parse(Console.ReadLine());
+                                Console.WriteLine("Enter the amount to withdraw:");
+                                decimal amount = decimal.Parse(Console.ReadLine());
+
+
+                                Account toAccount = accounts.Find(a => a.AccountNumber == fromAccountNumber);
+
+                                toAccount.Withdraw(amount);
+                                Console.WriteLine("Withdrawal complete!");
+                                Console.ReadLine();
 
                             }
 
