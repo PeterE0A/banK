@@ -17,16 +17,8 @@ namespace banks
             Customers = new List<Customer>();
         }
 
-        public void ViewCustomers()
-        {
-            Console.WriteLine("Customers:");
 
-            foreach (Customer customer in Customers)
-            {
-                Console.WriteLine(customer.Name);
 
-            }
-        }
 
         public void create_CUSTOMER()
         {
@@ -40,6 +32,7 @@ namespace banks
             Console.Write("Enter customer password: ");
             string customerPassword = Console.ReadLine();
 
+         
 
             CreateCustomer(customerName, customerEmail, customerPassword);
         }
@@ -54,20 +47,38 @@ namespace banks
         }
 
 
+        public void ViewCustomers()
+        {
+            Console.WriteLine("Customers:");
+
+            foreach (Customer customer in Customers)
+            {
+                Console.WriteLine($"\n{customer.Name}");
+
+            }
+
+            Console.ReadLine();
+        }
+
+      
+
+
         public void create_ACCOUNT()
         {
             // Show a list of all customers
             Console.Write("\nChoose customer to make account for: ");
             ViewCustomers();
 
-            string CustomerNR =Console.ReadLine();
+            string CustomerNR = Console.ReadLine();
 
             Console.Write("Enter balance amount: ");
             decimal balance = decimal.Parse(Console.ReadLine());
 
-            Employee employee = Data.employees.Find(e => e.Name == CustomerNR);
+            //Employee employee = Data.employees.Find(e => e.Name == CustomerNR);
 
-            employee.CreateAccount(CustomerNR, balance);
+           // Employee employee = Program.employees.Find(e => e.Name == CustomerNR);
+
+            CreateAccount(CustomerNR, balance);
 
 
 

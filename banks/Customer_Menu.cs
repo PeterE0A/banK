@@ -9,8 +9,8 @@ namespace banks
     class Customer_Menu
     {
         public List<Customer> customers { get; set; }
-        public List<Account> accounts { get; set; }
-        public List<Employee> employees { get; set; }
+        //public List<Account> accounts { get; set; }
+        //public List<Employee> employees { get; set; }
         public void Customer_MENU()
         {
         //Actions action = new Actions();
@@ -21,9 +21,13 @@ namespace banks
             string password = Console.ReadLine();
 
             // Find the customer with the given email address
-            Customer customer = customers.Find(c => c.Email == email && c.Password == password);
-            Account account = accounts.Find(c => c.Email == email && c.Password == password);
-            Employee employee = employees.Find(c => c.Email == email && c.Password == password);
+            //Customer customer = Data.customers.Find(c => c.Email == email && c.Password == password);
+            //Account account = Data.accounts.Find(c => c.Email == email && c.Password == password);
+
+            Customer customer = Program.customers.Find(c => c.Email == email && c.Password == password);
+            //Account account = Program.accounts.Find(c => c.Email == email && c.Password == password);
+
+            // Employee employee = Data.employees.Find(c => c.Email == email && c.Password == password);
 
             if (customer != null && customer.Password == password)
             {
@@ -52,12 +56,12 @@ namespace banks
                             break;
                         case ConsoleKey.NumPad3:
                         case ConsoleKey.D3:
-                            account.deposit_money();
+                            customer.deposit_money();
                             Console.Clear();
                             break;
                         case ConsoleKey.NumPad4:
                         case ConsoleKey.D4:
-                            account.withdraw_money();
+                            customer.withdraw_money();
                             Console.Clear();
                             break;
                         case ConsoleKey.NumPad5:

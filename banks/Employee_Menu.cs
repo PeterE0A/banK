@@ -8,8 +8,8 @@ namespace banks
 {
     class Employee_Menu
     {
-        public List<Customer> customers { get; set; }
-        public List<Account> accounts { get; set; }
+        //public List<Customer> customers { get; set; }
+       // public List<Account> accounts { get; set; }
         public List<Employee> employees { get; set; }
         public void Employee_MENU()
         {
@@ -22,9 +22,14 @@ namespace banks
             string password = Console.ReadLine();
 
             // Find the customer with the given email address
-            Customer customer = customers.Find(e => e.Name == name && e.Password == password);
-            Account account = accounts.Find(e => e.Name == name && e.Password == password);
-            Employee employee = employees.Find(e => e.Name == name && e.Password == password);
+            //Customer customer = Data.customers.Find(e => e.Name == name && e.Password == password);
+            //Account account = Data.accounts.Find(e => e.Name == name && e.Password == password);
+            //Employee employee = Data.employees.Find(e => e.Name == name && e.Password == password);
+
+
+            //Customer customer = Program.customers.Find(e => e.Name == name && e.Password == password);
+            //Account account = Program.accounts.Find(e => e.Name == name && e.Password == password);
+            Employee employee = Program.employees.Find(e => e.Name == name && e.Password == password);
 
             if (employee != null && employee.Password == password)
             {

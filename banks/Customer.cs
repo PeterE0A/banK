@@ -20,8 +20,10 @@ namespace banks
                 Accounts = new List<Account>();
             }
 
-            public void ShowOverview()
-            {
+
+
+        public void ShowOverview()
+        {
 
             Console.WriteLine("Here are your accounts:");
 
@@ -31,7 +33,10 @@ namespace banks
 
             }
 
-            }
+            Console.ReadLine();
+        }
+
+
 
         public void TransferMoney()
         {
@@ -43,8 +48,11 @@ namespace banks
             //decimal amount = decimal.Parse(Console.ReadLine());
             decimal amount = decimal.Parse(Console.ReadLine());
 
-            Account fromAccount = Data.accounts.Find(a => a.AccountNumber == fromAccountNumber);
-            Account toAccount = Data.accounts.Find(a => a.AccountNumber == toAccountNumber);
+            //Account fromAccount = Data.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+            //Account toAccount = Data.accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+            Account fromAccount = Program.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+            Account toAccount = Program.accounts.Find(a => a.AccountNumber == toAccountNumber);
 
             if (fromAccount != null && toAccount != null)
             {
@@ -60,10 +68,47 @@ namespace banks
             }
         }
 
-        
-            
 
-        
+
+        public void deposit_money()
+        {
+            Console.WriteLine("Enter the account number to Deposit to:");
+            int toAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the amount to Deposit:");
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+
+            //Account toAccount = Data.accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+
+            Account toAccount = Program.accounts.Find(a => a.AccountNumber == toAccountNumber);
+
+            toAccount.Deposit(amount);
+            Console.WriteLine("Deposit complete!");
+            Console.ReadLine();
+        }
+
+
+        public void withdraw_money()
+        {
+
+            Console.WriteLine("Enter the account number to withdraw from:");
+            int fromAccountNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the amount to withdraw:");
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+
+            //Account toAccount = Data.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+
+            Account toAccount = Program.accounts.Find(a => a.AccountNumber == fromAccountNumber);
+
+            toAccount.Withdraw(amount);
+            Console.WriteLine("Withdrawal complete!");
+            Console.ReadLine();
+        }
+
+
+
 
     }
 
